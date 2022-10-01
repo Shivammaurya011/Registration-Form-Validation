@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Poppins&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Registration Form Validation</title>
+    <link rel="stylesheet" href="./style.css">
+
+</head>
+
+<body>
+    <h1 class="text-center bg-dark text-light">Registration Form</h1>
+    <div class="container m-5" >
+        <form class="row g-3 formDesign" id="registration-form" novalidate>
+            <div class="col-md-3">
+                <label for="firstName" class="form-label">First name</label>
+                <input type="text" class="form-control" id="firstname" autocomplete="off" onkeyup="firstvali()">
+                <div class="invalid-feedback" class="col" style="display:none;">
+                    Please enter a valid first name
+                </div>
+            </div>    
+            <div class="col-md-3">
+                <label for="lastname" class="form-label">Last name</label>
+                <input type="text" class="form-control" id="lastname" onkeyup="lastvali()">
+                <div class="invalid-feedback" class="col" style="display:none;">
+                    Please enter a valid last name
+                </div>
+            </div>
+            <div class="col-md-6">
+                <label for="email" class="form-label">Email</label>
+                <div class="input-group has-validation">
+                    <span class="input-group-text" id="inputGroupPrepend">@</span>
+                    <input type="text" class="form-control" id="email" aria-describedby="inputGroupPrepend" autocomplete="off" onkeyup="emailvali()">
+                    <div class="invalid-feedback" class="col">
+                        Please enter a valid email address .
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <label for="password" class="form-label">Password</label>
+                <div class="input-group has-validation">
+                    <span class="input-group-text" id="inputGroupPrepend">*</span>
+                    <input type="password" class="form-control" id="password" aria-describedby="inputGroupPrepend" value="" onkeyup="passvali()">
+                    <div class="invalid-feedback">
+                        Please provide a valid password.
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <label for="confirm-password" class="form-label">Confirm Password</label>
+                <div class="input-group has-validation">
+                    <span class="input-group-text" id="inputGroupPrepend">*</span>
+                    <input type="password" class="form-control" id="confirm-password" aria-describedby="inputGroupPrepend" onkeyup="cv()">
+                    <div class="invalid-feedback">
+                        Password and confirm password don't match.
+                    </div>
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="check" onkeyup="checkvali()">
+                    <label class="form-check-label" for="check">
+                  Agree to terms and conditions
+                </label>
+                    <div class="invalid-feedback">
+                        You must agree before submitting.
+                    </div>
+                </div>
+            </div>
+            <div class="d-grid gap-2 col-6 mx-auto">
+                <button class="btn btn-dark mt-4" type="button" onclick="validate()">Submit form</button>
+            </div>
+        </form>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="script.js"></script>
+</body>
+</html>
